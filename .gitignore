@@ -1,0 +1,11 @@
+# Базовые исключения
+.DS_Store
+node_modules/
+.env
+*.pyc
+__pycache__/
+dist/
+build/
+.idea/
+.vscode/
+*.log
