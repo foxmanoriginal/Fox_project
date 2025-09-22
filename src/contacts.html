@@ -24,47 +24,109 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
 	<link rel="manifest" href="../assets/site.webmanifest">
+	<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Градиентная панель */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(to right, darkviolet, orange);
+        padding: 10px;
+        color: white;
+    }
+
+    /* Ссылки в столбик */
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: white;
+        background-color: #cc5500; /* Промежуточный между красным и оранжевым */
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        background-color: #b33c00; /* Темнее при наведении */
+    }
+
+    /* Логотип */
+    .logo {
+        width: 150px;
+        height: auto;
+    }
+</style>
 	</head>
 	<body>
+		<!-- Шапка сайта -->
 		<header>
-			<a href="/">Логотип или название сайта</a>
+			<img src="../assets/android-chrome-512x512.png" alt="Логотип Fox_Studio" class="logo">
+			<h1 style="flex: 1; text-align: center;">Связаться с нами</h1>
 			<nav>
-				<ul>
-					<li><a href="index.html">Главная</a></li>
-					<li><a href="about.html">О нас</a></li>
-					<li><a href="contacts.html">Контакты</a></li>
-				</ul>
+				<a href="index.html">Главная</a>
+				<a href="about.html">О нас</a>
+				<a href="contacts.html">Контакты</a>
+				<a href="study.html">Учебный процесс</a>
 			</nav>
 		</header>
+
 		<main>
-			<nav aria-label="Хлебные крошки">
-				<a href="index.html">Главная</a> →
-				<span>О нас</span>
-			</nav>
-			<h1>Связаться с нами</h1>
+			<!-- Основной контент -->
 			<section>
 				<h2>Контактная информация</h2>
 				<ul>
 					<li>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a></li>
-					<li>Email: <a href="mailto:support@foxai.ru">support@foxai.ru</a></li>
+					<li>Email: <a href="mailto:support@foxstudio.ru">support@foxstudio.ru</a></li>
 				</ul>
 			</section>
+
+			<!-- Форма обратной связи -->
 			<section>
 				<h2>Форма обратной связи</h2>
-				<form action="#" method="post">
-					<label for="name">Имя:</label><br>
-					<input type="text" id="name" name="name" required><br><br>
-					<label for="email">Email:</label><br>
-					<input type="email" id="email" name="email" required><br><br>
-					<label for="message">Сообщение:</label><br>
-					<textarea id="message" name="message" rows="4" required></textarea><br><br>
-					<button type="submit">Отправить</button>
-				</form>
+				<button id="open-modal">Открыть форму</button>
+				<div id="modal" style="display:none;">
+					<form action="thanks.html" method="post">
+						<label for="name">Имя:</label><br>
+						<input type="text" id="name" name="name" required><br><br>
+						<label for="email">Email:</label><br>
+						<input type="email" id="email" name="email" required><br><br>
+						<label for="phone">Телефон:</label><br>
+						<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
+						<label for="country">Страна:</label><br>
+						<select id="country" name="country">
+							<option value="ru">Россия</option>
+							<option value="us">США</option>
+							<option value="de">Германия</option>
+						</select><br><br>
+						<label for="message">Сообщение:</label><br>
+						<textarea id="message" name="message" rows="4" required></textarea><br><br>
+						<button type="submit">Отправить</button>
+					</form>
+				</div>
 			</section>
 		</main>
+
 		<footer>
-			<p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
-			<p>Телефон: +7 (123) 456-78-90</p>
+			<p>&copy; 2025 Fox_Studio. Все права защищены.</p>
+			<p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
 		</footer>
+
+		<script>
+			// Открытие модального окна
+			document.getElementById('open-modal').addEventListener('click', function() {
+				document.getElementById('modal').style.display = 'block';
+			});
+		</script>
 	</body>
 </html>
