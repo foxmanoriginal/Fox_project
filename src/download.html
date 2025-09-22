@@ -72,121 +72,98 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #d4e4f7 0%, #e8dff7 100%);
+    background: url('../assets/fier.jpg') no-repeat center center fixed; /* Украшение краёв картинкой */
+    background-size: cover;
     min-height: 100vh;
 }
 
 .page-container {
     max-width: 1200px;
     margin: 0 auto;
-    background: #ff7300;
+    background: #ffe4c4; /* Бледно-оранжевый фон для центральной части */
     min-height: 100vh;
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+}
+
+.content {
     padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.contact-info {
-    width: 48%;
-    background: #ffe4c4; /* Бледно-оранжевый фон */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.feedback-form {
-    width: 48%;
-    background: #f3e8ff; /* Бледно-фиолетовый фон */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info h2, .feedback-form h2 {
-    color: #4b0082;
-    margin-bottom: 15px;
-}
-
-.contact-info p, .feedback-form label {
-    font-size: 16px;
-    color: #4b0082;
+.download-text {
+    font-size: 18px;
+    color: #4b0082; /* Тёмно-фиолетовый текст с красно-розовым отливом */
+    text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
     line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-.feedback-form input, .feedback-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.feedback-form button {
-    background: #4b0082;
+.download-button {
+    background: #ff0000; /* Насыщенный красный цвет */
     color: white;
-    padding: 10px 20px;
+    padding: 15px 30px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    margin-top: 20px;
 }
 
-.feedback-form button:hover {
-    background: #372061;
+.download-button:hover {
+    background: #cc0000; /* Более тёмный оттенок красного при наведении */
 }
 </style>
 	</head>
 	<body>
-		<!-- Шапка сайта -->
-		<header>
-			<img src="../assets/android-chrome-512x512.png" alt="Логотип Fox_Studio" class="logo">
-			<h1 style="flex: 1; text-align: center;">Связаться с нами</h1>
-			<nav>
-				<a href="../index.html">Главная</a>
-				<a href="about.html">О нас</a>
-				<a href="contacts.html">Контакты</a>
-				<a href="study.html">Учебный процесс</a>
-			</nav>
-		</header>
+<!-- Шапка сайта -->
+<header>
+    <img src="../assets/android-chrome-512x512.png" alt="Логотип Fox_Studio" class="logo">
+    <h1 style="flex: 1; text-align: center;">Скачать Fox_Studio</h1>
+    <nav>
+        <a href="../index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="study.html">Учебный процесс</a>
+    </nav>
+</header>
 
-		<main>
-			<!-- Основной контент -->
-			<div class="page-container">
-        <div class="contact-info">
-            <h2>Контакты</h2>
-            <p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
-            <p>Email: <a href="mailto:info@foxstudio.com">info@foxstudio.com</a></p>
-        </div>
-        <div class="feedback-form">
-            <h2>Обратная связь</h2>
-            <form>
-                <label for="name">Ваше имя:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Ваш email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Ваше сообщение:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">Отправить</button>
-            </form>
+<main>
+    <div class="page-container">
+        <div class="content">
+            <div class="download-text">
+                <h2>Скачайте приложение</h2>
+                <p>Получите максимум возможностей искусственного интеллекта с Fox_Studio. Нажмите на кнопку, чтобы скачать приложение и начать использовать его прямо сейчас!</p>
+            </div>
+            <a href="/path/to/download" class="download-button">Скачать</a>
         </div>
     </div>
-		</main>
+</main>
 
-		<footer>
-			<p>&copy; 2025 Fox_Studio. Все права защищены.</p>
-			<p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
-		</footer>
+<footer>
+    <p>&copy; 2025 Fox_Studio. Все права защищены.</p>
+    <p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+</footer>
 
-		<script>
-			// Открытие модального окна
-			document.getElementById('open-modal').addEventListener('click', function() {
-				document.getElementById('modal').style.display = 'block';
-			});
-		</script>
+<script>
+    // При клике создаём и скачиваем пустой txt-файл
+    document.getElementById('download-btn').addEventListener('click', function() {
+        const file = new Blob([''], {type: 'text/plain'});
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(file);
+        a.download = 'Fox_Studio.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(a.href);
+    });
+</script>
 	</body>
 </html>

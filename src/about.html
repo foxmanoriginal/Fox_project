@@ -3,39 +3,148 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>О нас - Название вашего сайта</title>
-		<meta name="description" content="Узнайте больше о нашей компании и истории">
-		<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+	<title>О нас - Название вашего сайта</title>
+	<meta name="description" content="Узнайте больше о нашей компании и истории">
+	<!-- Open Graph / Telegram / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://foxmanoriginal.github.io/Fox_project/about.html">
+	<meta property="og:title" content="О нас - Название вашего сайта">
+	<meta property="og:description" content="Узнайте больше о нашей компании и истории">
+	<meta property="og:image" content="https://foxmanoriginal.github.io/Fox_project/assets/android-chrome-512x512.png">
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:url" content="https://foxmanoriginal.github.io/Fox_project/about.html">
+	<meta name="twitter:title" content="О нас - Название вашего сайта">
+	<meta name="twitter:description" content="Узнайте больше о нашей компании и истории">
+	<meta name="twitter:image" content="https://foxmanoriginal.github.io/Fox_project/assets/android-chrome-512x512.png">
+	<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="../assets/android-chrome-192x192.png">
+	<link rel="icon" type="image/png" sizes="512x512" href="../assets/android-chrome-512x512.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+	<link rel="manifest" href="../assets/site.webmanifest">
+	<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Градиентная панель */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(to right, darkviolet, orange);
+        padding: 10px;
+        color: white;
+    }
+
+    /* Ссылки в столбик */
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: white;
+        background-color: #cc5500; /* Промежуточный между красным и оранжевым */
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        background-color: #b33c00; /* Темнее при наведении */
+    }
+
+    /* Логотип */
+    .logo {
+        width: 150px;
+        height: auto;
+    }
+	</style>
 	</head>
 	<body>
-		<header>
-			<a href="/">Логотип или название сайта</a>
-			<nav>
-				<ul>
-					<li><a href="index.html">Главная</a></li>
-					<li><a href="about.html">О нас</a></li>
-					<li><a href="contacts.html">Контакты</a></li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<nav aria-label="Хлебные крошки">
-				<a href="index.html">Главная</a> →
-				<span>О нас</span>
-			</nav>
-			<h1>О нашей компании</h1>
-			<section>
-				<h2>Наша история</h2>
-				<p>Текст о том, как все начиналось...</p>
-			</section>
-			<section>
-				<h2>Наша команда</h2>
-				<p>Текст о команде...</p>
-			</section>
-		</main>
-		<footer>
-			<p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
-			<p>Телефон: +7 (123) 456-78-90</p>
-		</footer>
+	<!-- Шапка сайта с логотипом и навигацией -->
+	<header>
+		<img src="../assets/android-chrome-512x512.png" alt="Логотип Fox_Studio" class="logo">
+		<h1 style="flex: 1; text-align: center;">О Fox_Studio</h1>
+		<nav>
+			<a href="../index.html">Главная</a>
+			<a href="about.html">О нас</a>
+			<a href="contacts.html">Контакты</a>
+			<a href="study.html">Учебный процесс</a>
+		</nav>
+	</header>
+
+	<main>
+
+		<!-- Основной контент с якорями -->
+		<aside>
+			<ul>
+				<li><a href="#mission">Миссия</a></li>
+				<li><a href="#features">Преимущества</a></li>
+				<li><a href="#team">Команда</a></li>
+			</ul>
+		</aside>
+
+		<section idне вышло="mission">
+			<h2>Миссия приложения</h2>
+			<p>Fox_Studio — это современное оконное приложение для комфортной работы с локальными нейросетями на вашем ПК.</p>
+			<img src="../assets/android-chrome-512x512.png" alt="Fox_Studio скриншот" width="120" height="120">
+		</section>
+
+		<section id="features">
+			<h2>Преимущества Fox_Studio</h2>
+			<ul>
+				<li>Полная конфиденциальность данных</li>
+				<li>Работа без интернета</li>
+				<li>Высокая скорость обработки</li>
+				<li>Поддержка популярных моделей нейросетей</li>
+			</ul>
+			<article>
+				<h3>Для кого подходит?</h3>
+				<p>Fox_Studio идеально подходит для студентов, исследователей и всех, кто хочет запускать нейросети локально.</p>
+			</article>
+		</section>
+
+		<section id="team">
+			<h2>Наша команда</h2>
+			<ul>
+				<li>Иван Иванов — разработчик</li>
+				<li>Мария Смирнова — дизайнер</li>
+				<li>Алексей Петров — тестировщик</li>
+			</ul>
+			<figure>
+				<img src="../assets/apple-touch-icon.png" alt="Команда Fox_Studio" width="80" height="80">
+				<figcaption>Наша команда</figcaption>
+			</figure>
+		</section>
+
+		<div class="form-container">
+        <h2>Оставьте заявку</h2>
+        <form>
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+	</main>
+
+	<footer>
+		<p>&copy; 2025 Fox_Studio. Все права защищены.</p>
+		<p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+	</footer>
 	</body>
 </html>

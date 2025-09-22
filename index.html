@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>О нас - Название вашего сайта</title>
+	<meta name="description" content="Узнайте больше о нашей компании и истории">
+	<!-- Open Graph / Telegram / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://foxmanoriginal.github.io/Fox_project/about.html">
+	<meta property="og:title" content="О нас - Название вашего сайта">
+	<meta property="og:description" content="Узнайте больше о нашей компании и истории">
+	<meta property="og:image" content="https://foxmanoriginal.github.io/Fox_project/assets/android-chrome-512x512.png">
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:url" content="https://foxmanoriginal.github.io/Fox_project/about.html">
+	<meta name="twitter:title" content="О нас - Название вашего сайта">
+	<meta name="twitter:description" content="Узнайте больше о нашей компании и истории">
+	<meta name="twitter:image" content="https://foxmanoriginal.github.io/Fox_project/assets/android-chrome-512x512.png">
+	<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
+	<link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+	<link rel="manifest" href="assets/site.webmanifest">
+	<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Градиентная панель */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(to right, darkviolet, orange);
+        padding: 10px;
+        color: white;
+    }
+
+    /* Ссылки в столбик */
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: white;
+        background-color: #cc5500; /* Промежуточный между красным и оранжевым */
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        background-color: #b33c00; /* Темнее при наведении */
+    }
+
+    /* Логотип */
+    .logo {
+        width: 150px;
+        height: auto;
+    }
+
+    /* ===== БАЗОВЫЕ СТИЛИ ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Современный шрифт для лучшей читаемости */
+    margin: 0; /* Убираем стандартные отступы браузера */
+    padding: 0; /* Убираем стандартные внутренние отступы */
+    background: linear-gradient(135deg, #d4e4f7 0%, #e8dff7 100%); /* Нежный голубовато-сиреневый фон */
+    min-height: 100vh; /* Минимальная высота равна высоте окна браузера */
+}
+
+/* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
+.page-container {
+    max-width: 1200px; /* Максимальная ширина контента */
+    margin: 0 auto; /* Центрирование контейнера по горизонтали */
+    background: white; /* Белый фон для основного содержимого */
+    min-height: 100vh; /* Минимальная высота равна высоте окна браузера */
+    box-shadow: 0 0 30px rgba(0,0,0,0.1); /* Легкая тень вокруг всего контента */
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+.content {
+    padding: 40px; /* Внутренние отступы контента */
+    max-width: 900px; /* Максимальная ширина контента */
+    margin: 0 auto; /* Центрирование контента */
+}
+
+/* ===== КВАДРАТЫ ===== */
+.section-container {
+    display: flex; /* Горизонтальное расположение */
+    justify-content: space-around; /* Равномерное распределение */
+    gap: 20px; /* Расстояние между квадратами */
+    margin-top: 40px; /* Отступ сверху */
+}
+
+.section-box {
+    background: white; /* Белый фон для квадратов */
+    border-radius: 15px; /* Скругленные углы */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    padding: 20px; /* Внутренние отступы */
+    flex: 1; /* Равномерное распределение ширины */
+    text-align: center; /* Центрирование текста */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анимация */
+}
+
+.section-box:hover {
+    transform: translateY(-5px); /* Поднятие при наведении */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Увеличение тени */
+}
+
+.section-title {
+    font-size: 20px; /* Размер заголовка */
+    color: #5a5a89; /* Голубовато-сиреневый цвет текста */
+    margin-bottom: 15px; /* Отступ снизу */
+    font-weight: 600; /* Жирный шрифт */
+}
+
+.section-text {
+    font-size: 16px; /* Размер текста */
+    color: #7a7a9e; /* Бледный сиреневый цвет текста */
+    line-height: 1.6; /* Межстрочный интервал */
+}
+
+/* ===== ОПЫТ РАБОТЫ ===== */
+.experience-section {
+    margin-top: 50px; /* Отступ сверху */
+}
+
+.experience-card {
+    background: white; /* Белый фон карточки */
+    padding: 25px; /* Внутренние отступы */
+    margin: 20px 0; /* Вертикальные отступы */
+    border-radius: 12px; /* Скругленные углы */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Легкая тень */
+    border-left: 4px solid #667eea; /* Синяя полоса слева */
+    transition: transform 0.3s ease; /* Плавная анимация трансформации */
+}
+
+.experience-card:hover {
+    transform: translateX(5px); /* Сдвиг вправо при наведении */
+}
+
+.experience-title {
+    font-size: 20px; /* Размер шрифта заголовка опыта */
+    color: #2c3e50; /* Темно-синий цвет текста */
+    margin: 0 0 10px 0; /* Отступ снизу */
+    font-weight: 600; /* Жирный шрифт */
+}
+
+.experience-desc {
+    color: #7f8c8d; /* Серый цвет текста */
+    line-height: 1.6; /* Межстрочный интервал */
+    margin: 0; /* Убираем отступы */
+}
+
+/* ===== ФУТЕР ===== */
+.footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Темный градиентный фон */
+    color: white; /* Белый цвет текста */
+    text-align: center; /* Выравнивание по центру */
+    padding: 30px; /* Внутренние отступы */
+    margin-top: 50px; /* Отступ сверху */
+}
+	</style>
+	</head>
+	<body>
+<!-- Шапка сайта -->
+<header>
+    <img src="assets/android-chrome-512x512.png" alt="Логотип Fox_Studio" class="logo">
+    <h1 style="flex: 1; text-align: center;">Fox_Studio — локальные нейросети на вашем ПК</h1>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="src/about.html">О нас</a>
+        <a href="src/contacts.html">Контакты</a>
+        <a href="src/study.html">Учебный процесс</a>
+    </nav>
+</header>
+
+<main>
+    <div class="section-container">
+        <div class="section-box">
+            <h2 class="section-title">Добро пожаловать!</h2>
+            <p class="section-text">Fox_Studio — это простое и удобное приложение для запуска и использования нейросетей прямо на вашем компьютере. Получите максимум возможностей искусственного интеллекта без ограничений облака!</p>
+        </div>
+        <div class="section-box">
+            <h2 class="section-title">Возможности приложения</h2>
+            <ul class="section-text">
+                <li>Запуск популярных моделей нейросетей локально</li>
+                <li>Обработка изображений, текста и других данных</li>
+                <li>Интуитивно понятный интерфейс</li>
+                <li>Безопасность и приватность</li>
+            </ul>
+        </div>
+        <div class="section-box">
+            <h2 class="section-title">Начните прямо сейчас</h2>
+            <p class="section-text"><a href="src/download.html" style="font-size:1.2em; font-weight:bold;">Скачать приложение</a></p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Fox_Studio. Все права защищены.</p>
+    <p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+</footer>
+	</body>
+</html>
