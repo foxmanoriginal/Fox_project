@@ -41,24 +41,28 @@
 				<a href="index.html">Главная</a> →
 				<span>О нас</span>
 			</nav>
-			<h1>О приложении Fox_Studio</h1>
+			<h1>Скачать Fox_Studio</h1>
 			<section>
-				<h2>Для чего нужно приложение?</h2>
-				<p>Fox_Studio — это современное оконное приложение, позволяющее запускать и использовать нейросети прямо на вашем компьютере без необходимости подключения к облаку. Это удобно, быстро и безопасно.</p>
+				<h2>Загрузка приложения</h2>
+				<p>Нажмите на кнопку ниже, чтобы скачать установочный файл Fox_Studio для работы с локальными нейросетями.</p>
+				<button id="download-btn" style="display:flex;align-items:center;gap:8px;padding:12px 24px;font-size:1.1em;cursor:pointer;">
+					<img src="../assets/downloads-icon.png" alt="Скачать" width="24" height="24">
+					<span>Скачать</span>
+				</button>
 			</section>
-			<section>
-				<h2>Преимущества локального использования</h2>
-				<ul>
-					<li>Полная конфиденциальность ваших данных</li>
-					<li>Работа без интернета</li>
-					<li>Высокая скорость обработки</li>
-					<li>Поддержка популярных моделей нейросетей</li>
-				</ul>
-			</section>
-			<section>
-				<h2>Кто мы?</h2>
-				<p>FoxAI — команда энтузиастов, создающая инструменты для комфортной работы с искусственным интеллектом на вашем ПК.</p>
-			</section>
+			<script>
+			// При клике создаём и скачиваем пустой txt-файл
+			document.getElementById('download-btn').addEventListener('click', function() {
+				const file = new Blob([''], {type: 'text/plain'});
+				const a = document.createElement('a');
+				a.href = URL.createObjectURL(file);
+				a.download = 'Fox_Studio.txt';
+				document.body.appendChild(a);
+				a.click();
+				document.body.removeChild(a);
+				URL.revokeObjectURL(a.href);
+			});
+			</script>
 		</main>
 		<footer>
 			<p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
