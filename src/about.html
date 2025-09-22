@@ -66,7 +66,7 @@
         width: 150px;
         height: auto;
     }
-</style>
+	</style>
 	</head>
 	<body>
 	<!-- Шапка сайта с логотипом и навигацией -->
@@ -92,7 +92,7 @@
 			</ul>
 		</aside>
 
-		<section id="mission">
+		<section idне вышло="mission">
 			<h2>Миссия приложения</h2>
 			<p>Fox_Studio — это современное оконное приложение для комфортной работы с локальными нейросетями на вашем ПК.</p>
 			<img src="../assets/android-chrome-512x512.png" alt="Fox_Studio скриншот" width="120" height="120">
@@ -124,6 +124,22 @@
 				<figcaption>Наша команда</figcaption>
 			</figure>
 		</section>
+
+		<div class="form-container">
+        <h2>Оставьте заявку</h2>
+        <form>
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
 	</main>
 
 	<footer>

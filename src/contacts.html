@@ -66,6 +66,76 @@
         width: 150px;
         height: auto;
     }
+
+    /* ===== БАЗОВЫЕ СТИЛИ ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #d4e4f7 0%, #e8dff7 100%);
+    min-height: 100vh;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ff7300;
+    min-height: 100vh;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.contact-info {
+    width: 48%;
+    background: #ffe4c4; /* Бледно-оранжевый фон */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form {
+    width: 48%;
+    background: #f3e8ff; /* Бледно-фиолетовый фон */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2, .feedback-form h2 {
+    color: #4b0082;
+    margin-bottom: 15px;
+}
+
+.contact-info p, .feedback-form label {
+    font-size: 16px;
+    color: #4b0082;
+    line-height: 1.6;
+}
+
+.feedback-form input, .feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.feedback-form button {
+    background: #4b0082;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.feedback-form button:hover {
+    background: #372061;
+}
 </style>
 	</head>
 	<body>
@@ -83,38 +153,28 @@
 
 		<main>
 			<!-- Основной контент -->
-			<section>
-				<h2>Контактная информация</h2>
-				<ul>
-					<li>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a></li>
-					<li>Email: <a href="mailto:support@foxstudio.ru">support@foxstudio.ru</a></li>
-				</ul>
-			</section>
+			<div class="page-container">
+        <div class="contact-info">
+            <h2>Контакты</h2>
+            <p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+            <p>Email: <a href="mailto:info@foxstudio.com">info@foxstudio.com</a></p>
+        </div>
+        <div class="feedback-form">
+            <h2>Обратная связь</h2>
+            <form>
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required>
 
-			<!-- Форма обратной связи -->
-			<section>
-				<h2>Форма обратной связи</h2>
-				<button id="open-modal">Открыть форму</button>
-				<div id="modal" style="display:none;">
-					<form action="thanks.html" method="post">
-						<label for="name">Имя:</label><br>
-						<input type="text" id="name" name="name" required><br><br>
-						<label for="email">Email:</label><br>
-						<input type="email" id="email" name="email" required><br><br>
-						<label for="phone">Телефон:</label><br>
-						<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
-						<label for="country">Страна:</label><br>
-						<select id="country" name="country">
-							<option value="ru">Россия</option>
-							<option value="us">США</option>
-							<option value="de">Германия</option>
-						</select><br><br>
-						<label for="message">Сообщение:</label><br>
-						<textarea id="message" name="message" rows="4" required></textarea><br><br>
-						<button type="submit">Отправить</button>
-					</form>
-				</div>
-			</section>
+                <label for="email">Ваш email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Ваше сообщение:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
 		</main>
 
 		<footer>

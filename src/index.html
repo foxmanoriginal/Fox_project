@@ -66,6 +66,108 @@
         width: 150px;
         height: auto;
     }
+
+    /* ===== БАЗОВЫЕ СТИЛИ ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Современный шрифт для лучшей читаемости */
+    margin: 0; /* Убираем стандартные отступы браузера */
+    padding: 0; /* Убираем стандартные внутренние отступы */
+    background: linear-gradient(135deg, #d4e4f7 0%, #e8dff7 100%); /* Нежный голубовато-сиреневый фон */
+    min-height: 100vh; /* Минимальная высота равна высоте окна браузера */
+}
+
+/* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
+.page-container {
+    max-width: 1200px; /* Максимальная ширина контента */
+    margin: 0 auto; /* Центрирование контейнера по горизонтали */
+    background: white; /* Белый фон для основного содержимого */
+    min-height: 100vh; /* Минимальная высота равна высоте окна браузера */
+    box-shadow: 0 0 30px rgba(0,0,0,0.1); /* Легкая тень вокруг всего контента */
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+.content {
+    padding: 40px; /* Внутренние отступы контента */
+    max-width: 900px; /* Максимальная ширина контента */
+    margin: 0 auto; /* Центрирование контента */
+}
+
+/* ===== КВАДРАТЫ ===== */
+.section-container {
+    display: flex; /* Горизонтальное расположение */
+    justify-content: space-around; /* Равномерное распределение */
+    gap: 20px; /* Расстояние между квадратами */
+    margin-top: 40px; /* Отступ сверху */
+}
+
+.section-box {
+    background: white; /* Белый фон для квадратов */
+    border-radius: 15px; /* Скругленные углы */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    padding: 20px; /* Внутренние отступы */
+    flex: 1; /* Равномерное распределение ширины */
+    text-align: center; /* Центрирование текста */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анимация */
+}
+
+.section-box:hover {
+    transform: translateY(-5px); /* Поднятие при наведении */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Увеличение тени */
+}
+
+.section-title {
+    font-size: 20px; /* Размер заголовка */
+    color: #5a5a89; /* Голубовато-сиреневый цвет текста */
+    margin-bottom: 15px; /* Отступ снизу */
+    font-weight: 600; /* Жирный шрифт */
+}
+
+.section-text {
+    font-size: 16px; /* Размер текста */
+    color: #7a7a9e; /* Бледный сиреневый цвет текста */
+    line-height: 1.6; /* Межстрочный интервал */
+}
+
+/* ===== ОПЫТ РАБОТЫ ===== */
+.experience-section {
+    margin-top: 50px; /* Отступ сверху */
+}
+
+.experience-card {
+    background: white; /* Белый фон карточки */
+    padding: 25px; /* Внутренние отступы */
+    margin: 20px 0; /* Вертикальные отступы */
+    border-radius: 12px; /* Скругленные углы */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Легкая тень */
+    border-left: 4px solid #667eea; /* Синяя полоса слева */
+    transition: transform 0.3s ease; /* Плавная анимация трансформации */
+}
+
+.experience-card:hover {
+    transform: translateX(5px); /* Сдвиг вправо при наведении */
+}
+
+.experience-title {
+    font-size: 20px; /* Размер шрифта заголовка опыта */
+    color: #2c3e50; /* Темно-синий цвет текста */
+    margin: 0 0 10px 0; /* Отступ снизу */
+    font-weight: 600; /* Жирный шрифт */
+}
+
+.experience-desc {
+    color: #7f8c8d; /* Серый цвет текста */
+    line-height: 1.6; /* Межстрочный интервал */
+    margin: 0; /* Убираем отступы */
+}
+
+/* ===== ФУТЕР ===== */
+.footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Темный градиентный фон */
+    color: white; /* Белый цвет текста */
+    text-align: center; /* Выравнивание по центру */
+    padding: 30px; /* Внутренние отступы */
+    margin-top: 50px; /* Отступ сверху */
+}
 </style>
 	</head>
 	<body>
@@ -82,25 +184,25 @@
 </header>
 
 <main>
-    <section>
-        <h2>Добро пожаловать!</h2>
-        <p>Fox_Studio — это простое и удобное приложение для запуска и использования нейросетей прямо на вашем компьютере. Получите максимум возможностей искусственного интеллекта без ограничений облака!</p>
-    </section>
-
-    <section>
-        <h2>Возможности приложения</h2>
-        <ul>
-            <li>Запуск популярных моделей нейросетей локально</li>
-            <li>Обработка изображений, текста и других данных</li>
-            <li>Интуитивно понятный интерфейс</li>
-            <li>Безопасность и приватность</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Начните прямо сейчас</h2>
-        <p><a href="download.html" style="font-size:1.2em; font-weight:bold;">Скачать приложение</a></p>
-    </section>
+    <div class="section-container">
+        <div class="section-box">
+            <h2 class="section-title">Добро пожаловать!</h2>
+            <p class="section-text">Fox_Studio — это простое и удобное приложение для запуска и использования нейросетей прямо на вашем компьютере. Получите максимум возможностей искусственного интеллекта без ограничений облака!</p>
+        </div>
+        <div class="section-box">
+            <h2 class="section-title">Возможности приложения</h2>
+            <ul class="section-text">
+                <li>Запуск популярных моделей нейросетей локально</li>
+                <li>Обработка изображений, текста и других данных</li>
+                <li>Интуитивно понятный интерфейс</li>
+                <li>Безопасность и приватность</li>
+            </ul>
+        </div>
+        <div class="section-box">
+            <h2 class="section-title">Начните прямо сейчас</h2>
+            <p class="section-text"><a href="download.html" style="font-size:1.2em; font-weight:bold;">Скачать приложение</a></p>
+        </div>
+    </div>
 </main>
 
 <footer>

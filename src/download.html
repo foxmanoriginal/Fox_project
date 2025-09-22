@@ -66,6 +66,60 @@
         width: 150px;
         height: auto;
     }
+
+    /* ===== БАЗОВЫЕ СТИЛИ ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../assets/fier.jpg') no-repeat center center fixed; /* Украшение краёв картинкой */
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffe4c4; /* Бледно-оранжевый фон для центральной части */
+    min-height: 100vh;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+
+.content {
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.download-text {
+    font-size: 18px;
+    color: #4b0082; /* Тёмно-фиолетовый текст с красно-розовым отливом */
+    text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.download-button {
+    background: #ff0000; /* Насыщенный красный цвет */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+.download-button:hover {
+    background: #cc0000; /* Более тёмный оттенок красного при наведении */
+}
 </style>
 	</head>
 	<body>
@@ -82,15 +136,15 @@
 </header>
 
 <main>
-    <!-- Основной контент -->
-    <section>
-        <h2>Загрузка приложения</h2>
-        <p>Нажмите на кнопку ниже, чтобы скачать установочный файл Fox_Studio для работы с локальными нейросетями.</p>
-        <button id="download-btn" style="display:flex;align-items:center;gap:8px;padding:12px 24px;font-size:1.1em;cursor:pointer;">
-            <img src="../assets/downloads-icon.png" alt="Скачать" width="24" height="24">
-            <span>Скачать</span>
-        </button>
-    </section>
+    <div class="page-container">
+        <div class="content">
+            <div class="download-text">
+                <h2>Скачайте приложение</h2>
+                <p>Получите максимум возможностей искусственного интеллекта с Fox_Studio. Нажмите на кнопку, чтобы скачать приложение и начать использовать его прямо сейчас!</p>
+            </div>
+            <a href="/path/to/download" class="download-button">Скачать</a>
+        </div>
+    </div>
 </main>
 
 <footer>
