@@ -66,6 +66,69 @@
         width: 150px;
         height: auto;
     }
+
+    /* Новые стили для секции "О нас" */
+    .about-columns {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .about-block {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+    }
+
+    .about-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .about-form input,
+    .about-form textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .about-form button {
+        padding: 10px;
+        background-color: darkviolet;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .about-form button:hover {
+        background-color: #5c2e91;
+    }
+
+    /* Уникальные стили для каждого блока */
+    .about-block-mission {
+        border-left: 5px solid darkviolet;
+    }
+
+    .about-block-advantages {
+        border-left: 5px solid orange;
+    }
+
+    .about-block-forwhom {
+        border-left: 5px solid green;
+    }
+
+    .about-block-team {
+        border-left: 5px solid blue;
+    }
+
+    .about-block-contact {
+        border-left: 5px solid red;
+    }
 	</style>
 	</head>
 	<body>
@@ -82,64 +145,43 @@
 	</header>
 
 	<main>
-
-		<!-- Основной контент с якорями -->
-		<aside>
-			<ul>
-				<li><a href="#mission">Миссия</a></li>
-				<li><a href="#features">Преимущества</a></li>
-				<li><a href="#team">Команда</a></li>
-			</ul>
-		</aside>
-
-		<section idне вышло="mission">
-			<h2>Миссия приложения</h2>
-			<p>Fox_Studio — это современное оконное приложение для комфортной работы с локальными нейросетями на вашем ПК.</p>
-			<img src="../assets/android-chrome-512x512.png" alt="Fox_Studio скриншот" width="120" height="120">
-		</section>
-
-		<section id="features">
-			<h2>Преимущества Fox_Studio</h2>
-			<ul>
-				<li>Полная конфиденциальность данных</li>
-				<li>Работа без интернета</li>
-				<li>Высокая скорость обработки</li>
-				<li>Поддержка популярных моделей нейросетей</li>
-			</ul>
-			<article>
-				<h3>Для кого подходит?</h3>
-				<p>Fox_Studio идеально подходит для студентов, исследователей и всех, кто хочет запускать нейросети локально.</p>
-			</article>
-		</section>
-
-		<section id="team">
-			<h2>Наша команда</h2>
-			<ul>
-				<li>Иван Иванов — разработчик</li>
-				<li>Мария Смирнова — дизайнер</li>
-				<li>Алексей Петров — тестировщик</li>
-			</ul>
-			<figure>
-				<img src="../assets/apple-touch-icon.png" alt="Команда Fox_Studio" width="80" height="80">
-				<figcaption>Наша команда</figcaption>
-			</figure>
-		</section>
-
-		<div class="form-container">
-        <h2>Оставьте заявку</h2>
-        <form>
-            <label for="name">Имя:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Сообщение:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Отправить</button>
-        </form>
-    </div>
+        <div class="about-columns">
+            <div class="about-block about-block-mission">
+                <h2>Миссия приложения</h2>
+                <img src="../assets/android-chrome-192x192.png" alt="Fox_Studio 192" width="80" height="80" style="margin-bottom: 12px; border-radius: 10px; box-shadow: 0 2px 8px rgba(102,126,234,0.10);">
+                <p>Fox_Studio помогает пользователям создавать, обучаться и развиваться в цифровой среде, предоставляя удобные инструменты и поддержку.</p>
+            </div>
+            <div class="about-block about-block-advantages">
+                <h2>Преимущества Fox_Studio</h2>
+                <img src="../assets/android-chrome-512x512.png" alt="Fox_Studio 512" width="80" height="80" style="margin-bottom: 12px; border-radius: 10px; box-shadow: 0 2px 8px rgba(102,126,234,0.10);">
+                <ul>
+                    <li>Интуитивный интерфейс</li>
+                    <li>Современные технологии</li>
+                    <li>Поддержка пользователей</li>
+                    <li>Гибкая настройка</li>
+                </ul>
+            </div>
+            <div class="about-block about-block-forwhom">
+                <h2>Для кого подходит?</h2>
+                <img src="../assets/apple-touch-icon.png" alt="Fox_Studio Apple" width="80" height="80" style="margin-bottom: 12px; border-radius: 10px; box-shadow: 0 2px 8px rgba(102,126,234,0.10);">
+                <p>Fox_Studio идеально подходит для студентов, преподавателей, творческих специалистов и всех, кто стремится к развитию и обучению.</p>
+            </div>
+            <div class="about-block about-block-team">
+                <h2>Наша команда</h2>
+                <img src="../assets/android-chrome-192x192.png" alt="Fox_Studio Team" width="80" height="80" style="margin-bottom: 12px; border-radius: 10px; box-shadow: 0 2px 8px rgba(102,126,234,0.10);">
+                <p>В Fox_Studio работает команда профессионалов, объединённых идеей сделать обучение доступным и интересным для всех.</p>
+            </div>
+            <div class="about-block about-block-contact">
+                <h2>Оставьте заявку</h2>
+                <img src="../assets/android-chrome-512x512.png" alt="Fox_Studio Contact" width="80" height="80" style="margin-bottom: 12px; border-radius: 10px; box-shadow: 0 2px 8px rgba(102,126,234,0.10);">
+                <form class="about-form">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Ваш вопрос или пожелание" required></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
 	</main>
 
 	<footer>
