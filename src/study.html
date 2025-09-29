@@ -66,6 +66,101 @@
         width: 150px;
         height: auto;
     }
+
+    /* Адаптивные блоки для лекций и практик */
+    .study-blocks {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .study-block {
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Таблицы */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    /* Стили для PDF, карты и видео */
+    embed, iframe, video {
+        max-width: 100%;
+        height: auto;
+        border: none;
+    }
+
+    /* Подвал */
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+    }
+
+    footer a {
+        color: #cc5500;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    /* Кнопка скачивания */
+    .download-btn {
+        background-color: darkviolet;
+        color: #ffcc80; /* Светло-оранжевый */
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .download-btn:hover {
+        background-color: #5e35b1; /* Темнее фиолетового при наведении */
+    }
+
+    /* Дополнительная информация */
+    .extra-info-block {
+        border: 2px solid #ffcc80; /* Бледно-оранжевая рамка */
+        background-color: #fff3e0; /* Нежно-розовый фон */
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+
+    .extra-info-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .info-flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .info-materials, .info-map {
+        flex: 1;
+        min-width: 280px;
+    }
 </style>
 	</head>
 	<body>
@@ -82,80 +177,80 @@
 </header>
 
 <main>
+    <div class="study-blocks">
+        <section class="study-block">
+            <h2>Лекции</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Тема</th>
+                        <th>Лектор</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01.10.2025</td>
+                        <td>Введение в нейросети</td>
+                        <td>Иван Иванов</td>
+                    </tr>
+                    <tr>
+                        <td>08.10.2025</td>
+                        <td>Обучение моделей</td>
+                        <td>Мария Смирнова</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="study-block">
+            <h2>Практические занятия</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Тема</th>
+                        <th>Преподаватель</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>03.10.2025</td>
+                        <td>Работа с данными</td>
+                        <td>Алексей Петров</td>
+                    </tr>
+                    <tr>
+                        <td>10.10.2025</td>
+                        <td>Оптимизация моделей</td>
+                        <td>Иван Иванов</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
 
-    <!-- Таблицы -->
-    <section>
-        <h2>Лекции</h2>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Дата</th>
-                    <th>Тема</th>
-                    <th>Лектор</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>01.10.2025</td>
-                    <td>Введение в нейросети</td>
-                    <td>Иван Иванов</td>
-                </tr>
-                <tr>
-                    <td>08.10.2025</td>
-                    <td>Обучение моделей</td>
-                    <td>Мария Смирнова</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>Практические занятия</h2>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Дата</th>
-                    <th>Тема</th>
-                    <th>Преподаватель</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>03.10.2025</td>
-                    <td>Работа с данными</td>
-                    <td>Алексей Петров</td>
-                </tr>
-                <tr>
-                    <td>10.10.2025</td>
-                    <td>Оптимизация моделей</td>
-                    <td>Иван Иванов</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <!-- PDF-документ -->
-    <section>
-        <h2>Материалы</h2>
-        <embed src="../assets/actual_lecture_notes.pdf" type="application/pdf" width="600" height="400">
-        <p><a href="../assets/№1_Текущий_контроль_Фронтенд_и_бэкенд_разработка_(Часть_1_из_2).pdf" download>Скачать PDF</a></p>
-    </section>
-
-    <!-- Карта -->
-    <section>
-        <h2>Расположение</h2>
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aactual_map_id&ll=37.504198%2C55.670005&z=15" width="600" height="400" frameborder="0"></iframe>
-    </section>
-
-    <!-- Видео -->
-    <section>
-        <h2>Видео</h2>
-        <video controls width="600">
-            <source src="../assets/video1.mp4" type="video/mp4">
-            Ваш браузер не поддерживает видео.
-        </video>
-        <video controls width="600">
-            <source src="../assets/video2.mp4" type="video/mp4">
-            Ваш браузер не поддерживает видео.
-        </video>
+    <section class="extra-info-block">
+        <h3 style="font-style: italic; color: #764ba2; margin-bottom: 24px;">Дополнительная информация</h3>
+        <div class="extra-info-content">
+            <div class="info-flex">
+                <div class="info-materials">
+                    <h2>Материалы</h2>
+                    <embed src="../assets/actual_lecture_notes.pdf" type="application/pdf" width="100%" height="400">
+                    <button class="download-btn" onclick="window.location.href='../assets/№1_Текущий_контроль_Фронтенд_и_бэкенд_разработка_(Часть_1_из_2).pdf'">Скачать материалы</button>
+                </div>
+                <div class="info-map">
+                    <h2>Расположение</h2>
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aactual_map_id&ll=37.504198%2C55.670005&z=15" width="100%" height="500" frameborder="0" style="border-radius: 12px;"></iframe>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Видео</h2>
+            <video controls width="600">
+                <source src="../assets/video1.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+            <img src="../assets/NyanCat.gif" alt="Nyan Cat" width="400" height="200" style="display: block; margin: 24px auto 0 auto; border-radius: 12px; box-shadow: 0 2px 8px rgba(102,126,234,0.10);">
+        </div>
     </section>
 </main>
 
