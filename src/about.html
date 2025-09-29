@@ -24,6 +24,7 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
 	<link rel="manifest" href="../assets/site.webmanifest">
+    <link rel="stylesheet" href="../style/styles.css">
 	<style>
     body {
         margin: 0;
@@ -40,25 +41,46 @@
         color: white;
     }
 
-    /* Ссылки в столбик */
-    nav {
+    /* --- Исправленные стили для горизонтальной навигации --- */
+    .header__nav {
+        background: none;
+        padding: 0;
+    }
+    .header__nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
         display: flex;
-        flex-direction: column;
-        gap: 10px;
+        justify-content: center;
+        gap: var(--space-xl);
+        background: none;
+        box-shadow: none;
     }
-
-    nav a {
-        text-decoration: none;
+    .header__nav-item {
+        margin: 0;
+    }
+    .header__nav-link {
         color: white;
-        background-color: #cc5500; /* Промежуточный между красным и оранжевым */
-        padding: 10px;
-        border-radius: 5px;
-        text-align: center;
-        font-weight: bold;
+        text-decoration: none;
+        padding: var(--space-sm) var(--space-xl);
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        outline: none;
+        background: #cc5500;
+        box-shadow: none;
+        display: inline-block;
     }
-
-    nav a:hover {
-        background-color: #b33c00; /* Темнее при наведении */
+    .header__nav-link:hover,
+    .header__nav-link:focus-visible {
+        background: rgba(255,255,255,0.15);
+        transform: translateY(-2px);
+    }
+    .header__nav-link--active {
+        background: #b33c00;
+        color: #ffd6e0;
+        font-weight: 700;
+        box-shadow: none;
     }
 
     /* Логотип */
@@ -119,69 +141,178 @@
     }
 
     .about-block-forwhom {
-        border-left: 5px solid green;
+        border-left: 5px solid #222;
     }
 
     .about-block-team {
-        border-left: 5px solid blue;
+        border-left: 5px solid #e75480;
     }
 
     .about-block-contact {
         border-left: 5px solid red;
     }
+
+    /* Стили для шапки и навигации */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(to right, darkviolet, orange);
+        padding: 10px;
+        color: white;
+    }
+
+    .header__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header__nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header__nav-item {
+        margin: 0;
+    }
+
+    .header__nav-link {
+        text-decoration: none;
+        color: white;
+        background-color: #cc5500; /* Промежуточный между красным и оранжевым */
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .header__nav-link:hover {
+        background-color: #b33c00; /* Темнее при наведении */
+    }
+
+    .header__nav-link--active {
+        background-color: #b33c00; /* Темнее для активной ссылки */
+    }
+
+    /* Стили для крошек */
+    .breadcrumbs {
+        font-size: 14px;
+        padding: 10px 20px;
+        background: #f1f1f1;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .breadcrumbs a {
+        text-decoration: none;
+        color: darkviolet;
+    }
+
+    .breadcrumbs a:hover {
+        text-decoration: underline;
+    }
+
+    /* Стили для якорей */
+    .about-anchors {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px 0;
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .about-anchors a {
+        text-decoration: none;
+        color: darkviolet;
+        font-weight: bold;
+    }
+
+    .about-anchors a:hover {
+        text-decoration: underline;
+    }
+
+    /* Плавный скролл */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Активный якорь */
+    .about-block:target {
+        border-color: darkviolet;
+        background: #eef;
+    }
 	</style>
 	</head>
 	<body>
+	<!-- Крошки -->
+	<nav class="breadcrumbs">
+	    <a href="../index.html">Главная</a> &gt; <a href="about.html">О нас</a>
+	</nav>
+
 	<!-- Шапка сайта с логотипом и навигацией -->
-	<header>
-		<img src="../assets/android-chrome-512x512.png" alt="Логотип Fox_Studio" class="logo">
-		<h1 style="flex: 1; text-align: center;">О Fox_Studio</h1>
-		<nav>
-			<a href="../index.html">Главная</a>
-			<a href="about.html">О нас</a>
-			<a href="contacts.html">Контакты</a>
-			<a href="study.html">Учебный процесс</a>
-		</nav>
+	<header class="header">
+	    <img src="../assets/android-chrome-512x512.png" alt="Логотип Fox_Studio" class="logo">
+	    <h1 style="flex: 1; text-align: center;">О Fox_Studio</h1>
+	    <nav class="header__nav">
+	        <ul class="header__nav-list">
+	            <li class="header__nav-item"><a class="header__nav-link" href="../index.html">Главная</a></li>
+	            <li class="header__nav-item"><a class="header__nav-link header__nav-link--active" href="about.html">О нас</a></li>
+	            <li class="header__nav-item"><a class="header__nav-link" href="contacts.html">Контакты</a></li>
+	            <li class="header__nav-item"><a class="header__nav-link" href="study.html">Учебный процесс</a></li>
+	        </ul>
+	    </nav>
 	</header>
 
 	<main>
-        <div class="about-columns">
-            <div class="about-block about-block-mission">
-                <h2>Миссия приложения</h2>
-                <img src="../assets/android-chrome-192x192.png" alt="Fox_Studio 192" width="80" height="80" style="margin-bottom: 12px; border-radius: 10px; box-shadow: 0 2px 8px rgba(102,126,234,0.10);">
-                <p>Fox_Studio помогает пользователям создавать, обучаться и развиваться в цифровой среде, предоставляя удобные инструменты и поддержку.</p>
-            </div>
-            <div class="about-block about-block-advantages">
-                <h2>Преимущества Fox_Studio</h2>
-                <img src="../assets/android-chrome-512x512.png" alt="Fox_Studio 512" width="80" height="80" style="margin-bottom: 12px; border-radius: 10px; box-shadow: 0 2px 8px rgba(102,126,234,0.10);">
-                <ul>
-                    <li>Интуитивный интерфейс</li>
-                    <li>Современные технологии</li>
-                    <li>Поддержка пользователей</li>
-                    <li>Гибкая настройка</li>
-                </ul>
-            </div>
-            <div class="about-block about-block-forwhom">
-                <h2>Для кого подходит?</h2>
-                <img src="../assets/apple-touch-icon.png" alt="Fox_Studio Apple" width="80" height="80" style="margin-bottom: 12px; border-radius: 10px; box-shadow: 0 2px 8px rgba(102,126,234,0.10);">
-                <p>Fox_Studio идеально подходит для студентов, преподавателей, творческих специалистов и всех, кто стремится к развитию и обучению.</p>
-            </div>
-            <div class="about-block about-block-team">
-                <h2>Наша команда</h2>
-                <img src="../assets/android-chrome-192x192.png" alt="Fox_Studio Team" width="80" height="80" style="margin-bottom: 12px; border-radius: 10px; box-shadow: 0 2px 8px rgba(102,126,234,0.10);">
-                <p>В Fox_Studio работает команда профессионалов, объединённых идеей сделать обучение доступным и интересным для всех.</p>
-            </div>
-            <div class="about-block about-block-contact">
-                <h2>Оставьте заявку</h2>
-                <img src="../assets/android-chrome-512x512.png" alt="Fox_Studio Contact" width="80" height="80" style="margin-bottom: 12px; border-radius: 10px; box-shadow: 0 2px 8px rgba(102,126,234,0.10);">
-                <form class="about-form">
-                    <input type="text" placeholder="Ваше имя" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Ваш вопрос или пожелание" required></textarea>
-                    <button type="submit">Отправить</button>
-                </form>
-            </div>
-        </div>
+	    <nav class="about-anchors">
+	        <a href="#mission">Миссия</a>
+	        <a href="#advantages">Преимущества</a>
+	        <a href="#forwhom">Для кого?</a>
+	        <a href="#team">Команда</a>
+	        <a href="#contact">Заявка</a>
+	    </nav>
+	    <div class="about-columns">
+	        <div class="about-block about-block-mission" id="mission">
+	            <h2>Миссия приложения</h2>
+	            <img src="../assets/android-chrome-192x192.png" alt="Fox_Studio 192" width="80" height="80">
+	            <p>Fox_Studio помогает пользователям создавать, обучаться и развиваться в цифровой среде, предоставляя удобные инструменты и поддержку.</p>
+	        </div>
+	        <div class="about-block about-block-advantages" id="advantages">
+	            <h2>Преимущества Fox_Studio</h2>
+	            <img src="../assets/android-chrome-512x512.png" alt="Fox_Studio 512" width="80" height="80">
+	            <ul>
+	                <li>Интуитивный интерфейс</li>
+	                <li>Современные технологии</li>
+	                <li>Поддержка пользователей</li>
+	                <li>Гибкая настройка</li>
+	            </ul>
+	        </div>
+	        <div class="about-block about-block-forwhom" id="forwhom">
+	            <h2>Для кого подходит?</h2>
+	            <img src="../assets/apple-touch-icon.png" alt="Fox_Studio Apple" width="80" height="80">
+	            <p>Fox_Studio идеально подходит для студентов, преподавателей, творческих специалистов и всех, кто стремится к развитию и обучению.</p>
+	        </div>
+	        <div class="about-block about-block-team" id="team">
+	            <h2>Наша команда</h2>
+	            <img src="../assets/android-chrome-192x192.png" alt="Fox_Studio Team" width="80" height="80">
+	            <p>В Fox_Studio работает команда профессионалов, объединённых идеей сделать обучение доступным и интересным для всех.</p>
+	        </div>
+	        <div class="about-block about-block-contact" id="contact">
+	            <h2>Оставьте заявку</h2>
+	            <img src="../assets/android-chrome-512x512.png" alt="Fox_Studio Contact" width="80" height="80">
+	            <form class="about-form">
+	                <input type="text" placeholder="Ваше имя" required>
+	                <input type="email" placeholder="Email" required>
+	                <textarea placeholder="Ваш вопрос или пожелание" required></textarea>
+	                <button type="submit">Отправить</button>
+	            </form>
+	        </div>
+	    </div>
 	</main>
 
 	<footer>

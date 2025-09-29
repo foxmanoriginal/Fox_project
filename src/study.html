@@ -24,159 +24,36 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
 	<link rel="manifest" href="../assets/site.webmanifest">
-	<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-    }
-
-    /* Градиентная панель */
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: linear-gradient(to right, darkviolet, orange);
-        padding: 10px;
-        color: white;
-    }
-
-    /* Ссылки в столбик */
-    nav {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    nav a {
-        text-decoration: none;
-        color: white;
-        background-color: #cc5500; /* Темнее оранжевого */
-        padding: 10px;
-        border-radius: 5px;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    nav a:hover {
-        background-color: #b33c00; /* Ещё темнее при наведении */
-    }
-
-    /* Логотип */
-    .logo {
-        width: 150px;
-        height: auto;
-    }
-
-    /* Адаптивные блоки для лекций и практик */
-    .study-blocks {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .study-block {
-        background-color: #f9f9f9;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Таблицы */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    th, td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
-
-    th {
-        background-color: #f2f2f2;
-    }
-
-    /* Стили для PDF, карты и видео */
-    embed, iframe, video {
-        max-width: 100%;
-        height: auto;
-        border: none;
-    }
-
-    /* Подвал */
-    footer {
-        text-align: center;
-        padding: 20px;
-        background-color: #333;
-        color: white;
-    }
-
-    footer a {
-        color: #cc5500;
-        text-decoration: none;
-    }
-
-    footer a:hover {
-        text-decoration: underline;
-    }
-
-    /* Кнопка скачивания */
-    .download-btn {
-        background-color: darkviolet;
-        color: #ffcc80; /* Светло-оранжевый */
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-    }
-
-    .download-btn:hover {
-        background-color: #5e35b1; /* Темнее фиолетового при наведении */
-    }
-
-    /* Дополнительная информация */
-    .extra-info-block {
-        border: 2px solid #ffcc80; /* Бледно-оранжевая рамка */
-        background-color: #fff3e0; /* Нежно-розовый фон */
-        padding: 20px;
-        border-radius: 8px;
-        margin-top: 20px;
-    }
-
-    .extra-info-content {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .info-flex {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .info-materials, .info-map {
-        flex: 1;
-        min-width: 280px;
-    }
-</style>
+    <link rel="stylesheet" href="../style/styles.css">
 	</head>
 	<body>
-<!-- Шапка сайта -->
-<header>
-    <img src="../assets/android-chrome-512x512.png" alt="Логотип Fox_Studio" class="logo">
-    <h1 style="flex: 1; text-align: center;">Учебный процесс</h1>
-    <nav>
-        <a href="../index.html">Главная</a>
-        <a href="about.html">О нас</a>
-        <a href="contacts.html">Контакты</a>
-        <a href="study.html">Учебный процесс</a>
-    </nav>
+<!-- Крошки -->
+<nav class="breadcrumbs">
+    <a href="../index.html">Главная</a> &gt; <a href="study.html">Учебный процесс</a>
+</nav>
+
+<!-- Шапка сайта с логотипом и навигацией (БЭМ) -->
+<header class="header">
+    <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+        <img src="../assets/android-chrome-512x512.png" alt="Логотип Fox_Studio" class="logo">
+        <nav style="display:flex;flex-direction:column;gap:16px;">
+            <a href="../index.html" style="background:#cc5500;color:white;padding:10px 32px;border-radius:8px;font-weight:bold;text-align:center;text-decoration:none;">Главная</a>
+            <a href="about.html" style="background:#cc5500;color:white;padding:10px 32px;border-radius:8px;font-weight:bold;text-align:center;text-decoration:none;">О нас</a>
+            <a href="contacts.html" style="background:#cc5500;color:white;padding:10px 32px;border-radius:8px;font-weight:bold;text-align:center;text-decoration:none;">Контакты</a>
+            <a href="download.html" style="background:#cc5500;color:white;padding:10px 32px;border-radius:8px;font-weight:bold;text-align:center;text-decoration:none;">Скачать</a>
+            <a href="study.html" style="background:#b33c00;color:#ffd6e0;padding:10px 32px;border-radius:8px;font-weight:bold;text-align:center;text-decoration:none;">Учебный процесс</a>
+        </nav>
+    </div>
 </header>
 
 <main>
+    <section class="gradient-section" style="position:relative;min-height:200px;margin-bottom:32px;">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#ffb347 0%,#ffcc80 100%);opacity:0.7;z-index:1;"></div>
+        <div style="position:relative;z-index:2;padding:var(--space-xl);text-align:center;color:#222;">
+            <h2>Добро пожаловать в учебные материалы Fox_Studio!</h2>
+            <p>Здесь вы найдёте лекции, практики, видео и полезные ресурсы для вашего развития.</p>
+        </div>
+    </section>
     <div class="study-blocks">
         <section class="study-block">
             <h2>Лекции</h2>
@@ -245,11 +122,33 @@
         </div>
         <div>
             <h2>Видео</h2>
-            <video controls width="600">
-                <source src="../assets/video1.mp4" type="video/mp4">
-                Ваш браузер не поддерживает видео.
-            </video>
-            <img src="../assets/NyanCat.gif" alt="Nyan Cat" width="400" height="200" style="display: block; margin: 24px auto 0 auto; border-radius: 12px; box-shadow: 0 2px 8px rgba(102,126,234,0.10);">
+            <div class="media" style="aspect-ratio: 16/9; max-width: 600px; margin: 0 auto; position: relative;">
+                <iframe src="https://vk.com/video_ext.php?oid=-230182483&id=456239022" allowfullscreen style="width:100%;height:100%;border:none;aspect-ratio:16/9;" title="VK Видео"></iframe>
+                <div style="text-align:center;margin-top:12px;">
+                    <a href="https://vk.com/video-230182483_456239022" target="_blank" rel="noopener" class="download-btn" style="display:inline-block;">Открыть ВКонтакте</a>
+                    <p style="font-size:14px;color:#a00;margin-top:8px;">Если видео не отображается, откройте его на сайте VK.</p>
+                </div>
+            </div>
+            <div class="responsive-image" style="margin: 24px auto 0 auto; max-width: 400px;">
+                <img src="../assets/NyanCat.gif" alt="Nyan Cat" style="width:100%;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(102,126,234,0.10);">
+            </div>
+            <div class="info-form" style="margin-top:32px;">
+                <h2>Задать вопрос</h2>
+                <form id="questionForm" class="about-form" autocomplete="off" novalidate>
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="question" placeholder="Ваш вопрос" required></textarea>
+                    <button type="submit">Отправить</button>
+                    <div id="formError" style="color:#a00;margin-top:8px;display:none;"></div>
+                </form>
+            </div>
+        </div>
+        <div id="modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(44,62,80,0.7);z-index:9999;align-items:center;justify-content:center;">
+          <div style="background:#fff;border-radius:12px;max-width:350px;padding:32px;text-align:center;box-shadow:0 4px 24px rgba(0,0,0,0.15);position:relative;">
+            <h3 style="color:#764ba2;">Спасибо!</h3>
+            <p>Ваш вопрос отправлен.<br>Мы ответим на email.</p>
+            <button id="closeModal" style="margin-top:16px;padding:8px 24px;background:#ffd6e0;color:#764ba2;border:none;border-radius:6px;cursor:pointer;font-weight:600;">Закрыть</button>
+          </div>
         </div>
     </section>
 </main>
@@ -260,3 +159,33 @@
 </footer>
 	</body>
 </html>
+<script>
+    // Модалка для формы
+    const form = document.getElementById('questionForm');
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('closeModal');
+    const errorDiv = document.getElementById('formError');
+    if(form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        errorDiv.style.display = 'none';
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const question = form.question.value.trim();
+        let error = '';
+        if(name.length < 2) error = 'Введите имя (минимум 2 символа)';
+        else if(!/^\S+@\S+\.\S+$/.test(email)) error = 'Введите корректный email';
+        else if(question.length < 5) error = 'Вопрос слишком короткий';
+        if(error) {
+          errorDiv.textContent = error;
+          errorDiv.style.display = 'block';
+          return;
+        }
+        modal.style.display = 'flex';
+        form.reset();
+      });
+    }
+    if(closeModal) {
+      closeModal.onclick = () => { modal.style.display = 'none'; };
+    }
+</script>
